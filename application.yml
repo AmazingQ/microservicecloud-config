@@ -1,17 +1,16 @@
-spring: 
+﻿spring: 
     profiles:
         active:
         - dev
 
 --- 
 spring:
-    profiles: dev       #开发环境
+    profiles: dev       
         application:
             name: microservicecloud-config-elog-dev
 
 ---
 spring:
-    profiles: test      #测试环境
+    profiles: test     
         application:
             name: microservicecloud-config-elog-test
-#请保存为UTF-8的形式
