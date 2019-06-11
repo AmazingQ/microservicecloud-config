@@ -1,16 +1,16 @@
-﻿spring: 
-    profiles:
-        active:
-        - dev
+spring:
+  profiles:
+    active:
+    - dev
 
 --- 
 spring:
-    profiles: dev       
-        application:
-            name: microservicecloud-config-elog-dev
+  profiles: dev
+    application:
+      name: microservicecloud-config-elog-dev
 
 ---
 spring:
-    profiles: test     
-        application:
-            name: microservicecloud-config-elog-test
+  profiles: test
+    application:
+      name: microservicecloud-config-elog-test
