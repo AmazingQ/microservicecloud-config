@@ -1,0 +1,89 @@
+spring:
+  profiles:
+    active:
+    - dev
+
+
+---
+server:
+  port: 8001
+
+spring:
+  profiles: dev
+  application:
+    name: microservicecloud-config-dept-client                    #微服务名称
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource    #当前数据源操作类
+    driver-class-name: com.mysql.jdbc.Driver       #mysql驱动包
+    url: jdbc:mysql://localhost:3306/springboot     #数据库名
+    username: root
+    password: Vv125800
+    dbcp2:
+      min-idle: 5                                 #数据库连接池的最大连接数
+      initial-size: 5                             #初始化连接数
+      max-total: 5                                #最大连接数
+      max-wait-millis: 200
+
+mybatis-plus:
+  type-aliases-package: club.elog.springcloud.entity          #mybatisplus
+#Eureka客户端
+eureka:
+  client:           #将客户端注册进Eureka服务列表
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+  #      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  #  #eureka集群  手拉手集群
+  #
+
+  instance:         #修改服务名称
+    instance-id: dept-8001.com
+    prefer-ip-address: true        #访问路径可以显示IP地址
+#
+
+info:
+  app.name: microservicecloud
+  company.name: www.elog.club
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+  
+  
+  
+---
+spring:
+  profiles: test
+  application:
+    name: microservicecloud-config-dept-client                    #微服务名称
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource    #当前数据源操作类
+    driver-class-name: com.mysql.jdbc.Driver       #mysql驱动包
+    url: jdbc:mysql://localhost:3306/data2    #数据库名
+    username: root
+    password: Vv125800
+    dbcp2:
+      min-idle: 5                                 #数据库连接池的最大连接数
+      initial-size: 5                             #初始化连接数
+      max-total: 5                                #最大连接数
+      max-wait-millis: 200
+
+
+mybatis-plus:
+  type-aliases-package: club.elog.springcloud.entity          #mybatisplus
+#Eureka客户端
+eureka:
+  client:           #将客户端注册进Eureka服务列表
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+  #      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  #  #eureka集群  手拉手集群
+  #
+
+  instance:         #修改服务名称
+    instance-id: dept-8001.com
+    prefer-ip-address: true        #访问路径可以显示IP地址
+#
+
+info:
+  app.name: microservicecloud
+  company.name: www.elog.club
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
